@@ -53,7 +53,7 @@ export function ShareToast({ setShare }: SetShareProps) {
         <div
           id="share-button"
           className="bg-grey-200 flex h-[32px] w-[32px] items-center justify-center rounded-full"
-          onClick={() => setShare((sharing) => !sharing)}
+          onClick={() => setShare((showToast) => !showToast)}
         >
           <img src={shareButton} alt="share-button" />
         </div>
