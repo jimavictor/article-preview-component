@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-grey-900: #48556a;
+  --color-grey-500: #6e8098;
+  --color-grey-400: #9daec2;
+  --color-grey-200: #ecf2f8;
+  --font-manrope: "Manrope", sans-serif;
+}
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light;
+  background-color: var(--color-grey-200);
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#tooltip {
+  position: relative;
+  border-radius: 10px 10px 10px 10px;
+  left: 175px;
+  bottom: 70px;
+}
+
+@media (min-width: 1024px) {
+  #tooltip {
+    left: 230px;
+  }
+}
+
+#tooltip::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  right: 100px;
+  bottom: -11px;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 12px solid var(--color-grey-900);
+}
+#share-button {
+  cursor: pointer;
+}
+#share-button:hover {
+  background-color: var(--color-grey-900);
+}
+#share-button:hover > img {
+  filter: brightness(1000%) grayscale(100%);
+}
