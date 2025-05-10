@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import avatarMichelle from "../assets/images/avatar-michelle.jpg";
 import shareButton from "../assets/images/icon-share.svg";
 import { Tooltip } from "./Tooltip";
@@ -8,6 +8,7 @@ interface SetShareProps {
 }
 
 function AuthorInfo({ setShare }: SetShareProps) {
+  const [toolTipOpen, setToolTipOpen] = useState(false);
   const tooltipRef = useRef<HTMLDivElement>(null);
 
   const showToast = () => {
@@ -16,11 +17,12 @@ function AuthorInfo({ setShare }: SetShareProps) {
       setShare((sharing) => !sharing);
     } else {
       // Show Tooltip component
-      if (tooltipRef.current) {
+      if (tooltipRef.current && !toolTipOpen) {
         tooltipRef.current.style.display = "block";
         tooltipRef.current.style.opacity = "0";
         setTimeout(() => {
           if (tooltipRef.current) tooltipRef.current.style.opacity = "1";
+          setToolTipOpen(true);
         }, 10);
       }
     }
@@ -53,7 +55,7 @@ function AuthorInfo({ setShare }: SetShareProps) {
         <img src={shareButton} alt="share-button" />
       </div>
       <div className="absolute">
-        <Tooltip tooltipRef={tooltipRef} />
+        <Tooltip tooltipRef={tooltipRef} setToolTipOpen={setToolTipOpen} />
       </div>
     </div>
   );

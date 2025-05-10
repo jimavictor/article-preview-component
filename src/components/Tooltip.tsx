@@ -3,11 +3,12 @@ import xIcon from "../assets/images/icon-twitter.svg";
 import pinterestIcon from "../assets/images/icon-pinterest.svg";
 import { useEffect } from "react";
 
-interface openTooltipProps {
+interface OpenTooltipProps {
   tooltipRef: React.RefObject<HTMLDivElement | null>;
+  setToolTipOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export function Tooltip({ tooltipRef }: openTooltipProps) {
+export function Tooltip({ tooltipRef, setToolTipOpen }: OpenTooltipProps) {
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       const target = event.target as Node | null;
@@ -20,6 +21,7 @@ export function Tooltip({ tooltipRef }: openTooltipProps) {
         tooltipRef.current.style.opacity = "0";
         setTimeout(() => {
           if (tooltipRef.current) tooltipRef.current.style.display = "none";
+          setToolTipOpen(false);
         }, 300);
       }
     }
