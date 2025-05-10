@@ -1,36 +1,36 @@
 import facebookIcon from "../assets/images/icon-facebook.svg";
 import twitterIcon from "../assets/images/icon-twitter.svg";
 import pinterestIcon from "../assets/images/icon-pinterest.svg";
-import { useRef, useEffect } from "react";
+import { useEffect } from "react";
 
 interface openTooltipProps {
-  openTooltip: boolean;
-  setOpenTooltip: React.Dispatch<React.SetStateAction<boolean>>;
+  tooltipRef: React.RefObject<HTMLDivElement | null>;
 }
 
-export function Tooltip({ openTooltip, setOpenTooltip }: openTooltipProps) {
-  const tooltipRef = useRef<HTMLDivElement>(null);
-
+export function Tooltip({ tooltipRef }: openTooltipProps) {
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       const target = event.target as Node | null;
-      
-      if (tooltipRef.current && !tooltipRef.current.contains(target)) {
-        setOpenTooltip(false);
+
+      if (
+        tooltipRef.current &&
+        !tooltipRef.current.contains(target) &&
+        tooltipRef.current.style.display === "block"
+      ) {
+        tooltipRef.current.style.opacity = "0";
+        setTimeout(() => {
+          if (tooltipRef.current) tooltipRef.current.style.display = "none";
+        }, 400);
       }
     }
-
     document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
   }, []);
 
   return (
     <div
       id="tooltip"
       ref={tooltipRef}
-      className={`bg-grey-900 hidden w-full max-w-[248px] justify-center px-[32px] py-[16px] ${openTooltip && "md:block"}`}
+      className={`bg-grey-900 hidden w-full max-w-[248px] justify-center px-[32px] py-[16px]`}
     >
       <div className="flex items-center justify-between">
         <div className="flex space-x-[24px]">
