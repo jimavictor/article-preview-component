@@ -16,7 +16,7 @@ function AuthorInfo({ setShare }: SetShareProps) {
       setShare((sharing) => !sharing);
     } else {
       // Show Tooltip component
-      if (tooltipRef.current && tooltipRef.current.style.display == "none") {
+      if (tooltipRef.current) {
         tooltipRef.current.style.display = "block";
         tooltipRef.current.style.opacity = "0";
         setTimeout(() => {

@@ -20,7 +20,7 @@ export function Tooltip({ tooltipRef }: openTooltipProps) {
         tooltipRef.current.style.opacity = "0";
         setTimeout(() => {
           if (tooltipRef.current) tooltipRef.current.style.display = "none";
-        }, 400);
+        }, 300);
       }
     }
     document.addEventListener("mousedown", handleClickOutside);
