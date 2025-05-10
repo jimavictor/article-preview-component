@@ -1,5 +1,5 @@
 import facebookIcon from "../assets/images/icon-facebook.svg";
-import twitterIcon from "../assets/images/icon-twitter.svg";
+import xIcon from "../assets/images/icon-twitter.svg";
 import pinterestIcon from "../assets/images/icon-pinterest.svg";
 import shareButton from "../assets/images/icon-share.svg";
 
@@ -24,19 +24,19 @@ export function ShareToast({ setShare }: SetShareProps) {
             target="_blank"
           >
             <img
-              className="h-[20px] w-[20px]"
+              className="social-icons h-[20px] w-[20px]"
               src={facebookIcon}
               alt="facebook-icon"
             />
           </a>
           <a
-            href={`https://twitter.com/intent/tweet?url=${window.location.origin}&text=Check%20this%20out!`}
+            href={`https://x.com/intent/tweet?url=${window.location.origin}&text=Check%20this%20out!`}
             target="_blank"
           >
             <img
-              className="h-[16px] w-[20px]"
-              src={twitterIcon}
-              alt="twitter-icon"
+              className="social-icons h-[16px] w-[20px]"
+              src={xIcon}
+              alt="x-icon"
             />
           </a>
           <a
@@ -44,7 +44,7 @@ export function ShareToast({ setShare }: SetShareProps) {
             target="_blank"
           >
             <img
-              className="h-[20px] w-[20px]"
+              className="social-icons h-[20px] w-[20px]"
               src={pinterestIcon}
               alt="pinterest-icon"
             />

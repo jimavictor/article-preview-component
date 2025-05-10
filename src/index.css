@@ -30,7 +30,7 @@ body {
   border-radius: 10px 10px 10px 10px;
   left: 175px;
   bottom: 70px;
-  transition: opacity .3s;
+  transition: opacity 0.3s;
 }
 
 @media (min-width: 1024px) {
@@ -51,12 +51,20 @@ body {
   border-right: 12px solid transparent;
   border-top: 12px solid var(--color-grey-900);
 }
+
 #share-button {
   cursor: pointer;
 }
+
 #share-button:hover {
   background-color: var(--color-grey-900);
 }
+
 #share-button:hover > img {
   filter: brightness(1000%) grayscale(100%);
+}
+
+.social-icons:hover {
+  filter: invert(48%) sepia(88%) saturate(7457%) hue-rotate(194deg)
+    brightness(103%) contrast(101%);
 }

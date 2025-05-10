@@ -11,18 +11,17 @@ function AuthorInfo({ setShare }: SetShareProps) {
   const tooltipRef = useRef<HTMLDivElement>(null);
 
   const showToast = () => {
-    console.log("i ran 1");
     if (window.innerWidth < 768) {
       // Toggle ShareToast component
       setShare((sharing) => !sharing);
     } else {
       // Show Tooltip component
-      if (tooltipRef.current) {
+      if (tooltipRef.current && tooltipRef.current.style.display == "none") {
         tooltipRef.current.style.display = "block";
         tooltipRef.current.style.opacity = "0";
         setTimeout(() => {
-        if (tooltipRef.current) tooltipRef.current.style.opacity = "1";
-        }, 100);
+          if (tooltipRef.current) tooltipRef.current.style.opacity = "1";
+        }, 10);
       }
     }
   };
