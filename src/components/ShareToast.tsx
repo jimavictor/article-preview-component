@@ -20,7 +20,7 @@ export function ShareToast({ setShare }: SetShareProps) {
           className="mr-[64px] flex w-full max-w-[92px] items-center justify-between"
         >
           <a
-            href={`https://www.facebook.com/sharer/sharer.php?u=https://${window.location.origin}`}
+            href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.origin}`}
             target="_blank"
           >
             <img
@@ -30,7 +30,7 @@ export function ShareToast({ setShare }: SetShareProps) {
             />
           </a>
           <a
-            href={`https://twitter.com/intent/tweet?url=https://${window.location.origin}&text=Check%20this%20out!`}
+            href={`https://twitter.com/intent/tweet?url=${window.location.origin}&text=Check%20this%20out!`}
             target="_blank"
           >
             <img
@@ -40,7 +40,7 @@ export function ShareToast({ setShare }: SetShareProps) {
             />
           </a>
           <a
-            href={`https://www.pinterest.com/pin/create/button/?url=https://${window.location.origin}&media=&description=Check%20this%20out!`}
+            href={`https://www.pinterest.com/pin/create/button/?url=${window.location.origin}&media=&description=Check%20this%20out!`}
             target="_blank"
           >
             <img
