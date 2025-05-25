@@ -24,7 +24,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [solution URL](https://https://github.com/jimavictor/article-preview-component)
+- Solution URL: [solution URL](https://github.com/jimavictor/article-preview-component)
 - Live Site: [live site](https://web-article-preview-component.netlify.app/)
 
 ## My process
